@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="8,00"
+	Name="libEGraphTool"
+	ProjectGUID="{3F367432-3C18-45E4-90ED-21249540C406}"
+	RootNamespace="libEGraphTool"
+	Keyword="MakeFileProj"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory=".\Release"
+			IntermediateDirectory=".\Release"
+			ConfigurationType="0"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cd ..\..\src\libEGraphTool&#x0D;&#x0A;NMAKE "
+				ReBuildCommandLine="cd ..\..\src\libEGraphTool&#x0D;&#x0A;NMAKE /a"
+				CleanCommandLine="cd ..\..\src\libEGraphTool&#x0D;&#x0A;NMAKE  clean"
+				Output="..\..\lib\libEGraphTool.dll"
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="0"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cd ..\..\src\libEGraphTool&#x0D;&#x0A;NMAKE  CFG=&quot;Debug&quot;"
+				ReBuildCommandLine="cd ..\..\src\libEGraphTool&#x0D;&#x0A;NMAKE  CFG=&quot;Debug&quot; /a"
+				CleanCommandLine="cd ..\..\src\libEGraphTool&#x0D;&#x0A;NMAKE   CFG=&quot;Debug&quot; clean"
+				Output="..\..\lib\libEGraphTool.dll"
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
+			>
+			<File
+				RelativePath="..\..\src\libEGraphTool\EGraphRec.cxx"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\libEGraphTool\EGraphRecProc.cxx"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\libEGraphTool\EGraphTool.cxx"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl"
+			>
+			<File
+				RelativePath="..\..\src\libEGraphTool\EGraphRec.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\libEGraphTool\EGraphRecProc.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\libEGraphTool\EGraphTool.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\libEGraphTool\EGraphToolLinkDef.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
+			>
+		</Filter>
+		<File
+			RelativePath="..\..\src\libEGraphTool\Makefile"
+			>
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

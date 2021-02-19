@@ -1,0 +1,14 @@
+#------------------------------------------------------------------------------
+include ../config/ProjectDef.mk
+include ../config/RootDef.mk
+#------------------------------------------------------------------------------
+
+NAME          = Shower
+
+headers       = EdbShowerRec.h EdbShowerAlg.h  EdbPVRQuality.h
+
+PROJECT_LIBS  = $(PROJECT_LIBS) -lEmath -lEdb -lvt -lEdr -lEIO -lEBase -lEDA -lSpectrum
+
+#------------------------------------------------------------------------------
+include ../config/TargetsDef.mk
+#------------------------------------------------------------------------------

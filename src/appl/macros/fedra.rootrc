@@ -1,0 +1,9 @@
+#------------------------------------------------------------
+# Specific for FEDRA root environment settings 
+# 
+# To be available this file should be $HOME/.rootrc file in 
+# user's directory
+#------------------------------------------------------------
+
+Unix.*.Root.MacroPath:      .:$(FEDRA_ROOT)/macros
+WinNT.*.Root.MacroPath:     .;$(FEDRA_ROOT)/macros

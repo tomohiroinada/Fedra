@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="8,00"
+	Name="macros"
+	ProjectGUID="{FA3A031D-3978-4ACA-99B9-8A550B26E15F}"
+	RootNamespace="macros"
+	Keyword="MakeFileProj"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory=".\Release"
+			IntermediateDirectory=".\Release"
+			ConfigurationType="0"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cd ..\..\src\appl\macros&#x0D;&#x0A;NMAKE"
+				ReBuildCommandLine="cd ..\..\src\appl\macros&#x0D;&#x0A;NMAKE /a"
+				CleanCommandLine="cd ..\..\src\appl\macros&#x0D;&#x0A;NMAKE clean"
+				Output="..\..\bin\macros.exe"
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="0"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cd ..\..\src\appl\macros&#x0D;&#x0A;NMAKE  CFG=&quot;Debug&quot;"
+				ReBuildCommandLine="cd ..\..\src\appl\macros&#x0D;&#x0A;NMAKE  CFG=&quot;Debug&quot; /a"
+				CleanCommandLine="cd ..\..\src\appl\macros&#x0D;&#x0A;NMAKE  CFG=&quot;Debug&quot; clean"
+				Output="..\..\bin\macros.exe"
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
+			>
+			<File
+				RelativePath="..\..\src\appl\macros\addRWC.C"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\appl\macros\addRWD.C"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\appl\macros\check_cp.C"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\appl\macros\check_raw.C"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\appl\macros\check_tr.C"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\appl\macros\checkrun.C"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\appl\macros\edbtools.C"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\appl\macros\tlg2couples.C"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\appl\macros\tracks2edb.C"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl"
+			>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
+			>
+		</Filter>
+		<File
+			RelativePath="..\..\src\appl\macros\Makefile"
+			>
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

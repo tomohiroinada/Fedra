@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="8,00"
+	Name="libAlignment"
+	ProjectGUID="{4C11DDA7-0A4D-4DF2-A645-83D9A981F411}"
+	RootNamespace="libAlignment"
+	Keyword="MakeFileProj"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory=".\Release"
+			IntermediateDirectory=".\Release"
+			ConfigurationType="0"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cd ..\..\src\libAlignment&#x0D;&#x0A;NMAKE "
+				ReBuildCommandLine="cd ..\..\src\libAlignment&#x0D;&#x0A;NMAKE /a"
+				CleanCommandLine="cd ..\..\src\libAlignment&#x0D;&#x0A;NMAKE  clean"
+				Output="..\..\lib\libAlignment.dll"
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="0"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cd ..\..\src\libAlignment&#x0D;&#x0A;NMAKE  CFG=&quot;Debug&quot;"
+				ReBuildCommandLine="cd ..\..\src\libAlignment&#x0D;&#x0A;NMAKE  CFG=&quot;Debug&quot; /a"
+				CleanCommandLine="cd ..\..\src\libAlignment&#x0D;&#x0A;NMAKE   CFG=&quot;Debug&quot; clean"
+				Output="..\..\lib\libAlignment.dll"
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
+			>
+			<File
+				RelativePath="..\..\src\libAlignment\EdbAlignmentMap.cxx"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\libAlignment\EdbPatCell2.cxx"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\libAlignment\EdbPeakProb.cxx"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\libAlignment\EdbPositionAlignment.cxx"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\libAlignment\EdbTestAl.cxx"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl"
+			>
+			<File
+				RelativePath="..\..\src\libAlignment\AlignmentLinkDef.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\libAlignment\EdbAlignmentMap.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\libAlignment\EdbPatCell2.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\libAlignment\EdbPeakProb.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\libAlignment\EdbPositionAlignment.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\libAlignment\EdbTestAl.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
+			>
+		</Filter>
+		<File
+			RelativePath="..\..\src\libAlignment\Makefile"
+			>
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

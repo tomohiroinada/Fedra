@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="libEmath"
+	ProjectGUID="{8A51EAF8-C292-4F49-8180-C20CA552B98D}"
+	SccProjectName=""
+	SccLocalPath=""
+	Keyword="MakeFileProj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory=".\Release"
+			IntermediateDirectory=".\Release"
+			ConfigurationType="0"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cd ..\..\src\libEmath
+NMAKE "
+				ReBuildCommandLine="cd ..\..\src\libEmath
+NMAKE /a"
+				CleanCommandLine="cd ..\..\src\libEmath
+NMAKE  clean"
+				Output="..\..\lib\libEmath.dll"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File
+				RelativePath="..\..\src\libEmath\EdbMath.cxx">
+			</File>
+			<File
+				RelativePath="..\..\src\libEmath\TIndexCell.cpp">
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl">
+			<File
+				RelativePath="..\..\src\libEmath\EdbMath.h">
+			</File>
+			<File
+				RelativePath="..\..\src\libEmath\EmathLinkDef.h">
+			</File>
+			<File
+				RelativePath="..\..\src\libEmath\EmathVer.h">
+			</File>
+			<File
+				RelativePath="..\..\src\libEmath\TIndexCell.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+		</Filter>
+		<File
+			RelativePath="..\..\src\libEmath\Makefile">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

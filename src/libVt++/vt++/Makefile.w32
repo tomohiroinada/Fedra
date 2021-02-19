@@ -1,0 +1,93 @@
+#------------------------------------------------------------------------------
+include ../../config/ProjectDef.mk
+include ../../config/RootDef.mk
+#------------------------------------------------------------------------------
+
+NAME          = vt
+CINT_NAME     = vtCint
+LINKDEF_NAME  = cintdict\LinkDef.hh
+
+TARGETSO      = $(LIB_DIR)/lib$(NAME).$(DllSuf)
+
+#------------------------------------------------------------------------------
+headers  = VtVector.hh VtMatrix.hh VtNegMatrix.hh VtSqMatrix.hh VtSymMatrix.hh \
+           CMatrix.hh VtIni.hh VtTrack.hh VtRelation.hh VtKalman.hh VtMassC.hh \
+           VtRelationList.hh VtVertex.hh VtDistance.hh
+
+SrcSuf   = C
+  
+classes  = $(headers:.hh=.c)
+
+CINT     = include\VtVector.hh      include\CMatrix.hh        \
+           include\VtMatrix.hh      include\VtNegMatrix.hh    \
+           include\VtSqMatrix.hh    include\VtSymMatrix.hh    \
+           include\VtIni.hh 	    include\VtTrack.hh        \
+           include\VtRelation.hh    include\VtKalman.hh       \
+           include\VtMassC.hh       include\VtRelationList.hh \
+           include\VtVertex.hh      include\VtDistance.hh     \
+           $(LINKDEF_NAME)
+
+SRC      = $(classes) $(CINT_NAME).cxx
+OBJS     = $(SRC:.cxx=.obj)
+OBJS     = $(OBJS:.c=.obj)
+
+CXXFLAGS = $(CXXFLAGS) -I$(INC_DIR)
+CXXFLAGS = $(CXXFLAGS) -D_USESYSAL -DUSE_ROOT
+
+#------------------------------------------------------------------------------
+
+all: $(TARGETSO)
+
+#includes: $(headers)
+#	cp $(headers) $(INC_DIR)
+
+$(TARGETSO): $(OBJS)
+    BINDEXPLIB  $* $(OBJS) > $*.def
+    lib -nologo -MACHINE:IX86 $(OBJS) -def:$*.def $(OutPutOpt)$(@:.dll=.lib)
+    $(LD) $(SOFLAGS)  $(LDFLAGS) $(OBJS) $*.exp  $(LIBS) $(PROJECT_LIBS:-l=/DEFAULTLIB:lib) $(OutPutOpt)$@
+    $(MT_DLL)
+    @echo "$@ done"
+
+$(CINT_NAME).cxx: $(CINT)
+    @echo "Generating dictionary Cint..."
+    rootcint -f $(CINT_NAME).cxx -c -I$(INC_DIR) $(CINT)
+
+$(CINT_NAME).obj: $(CINT_NAME).cxx
+    $(CXX) $(CXXFLAGS) -DCINTOBJECT -c $(CINT_NAME).cxx
+
+clean:
+    del /q $(OBJS) *Cint.* *.pdb *.def "$(LIB_DIR)"\lib$(NAME).* 
+
+check:
+	@for %F in ($(TARGET))   DO @IF EXIST %F ( @ECHO bin\%~nxF...ok ) ELSE ( @ECHO bin\%~nxF...ERROR! )
+	@for %F in ($(TARGETSO)) DO @IF NOT EXIST %~dpnF.lib @IF NOT EXIST %F @ECHO lib\%%~nF.lib...ERROR!"			lib\%%~nF.dll...ERROR!
+	@for %F in ($(TARGETSO)) DO @IF NOT EXIST %~dpnF.lib @IF     EXIST %F @ECHO lib\%%~nF.lib...ERROR!"			lib\%%~nF.dll...ok
+	@for %F in ($(TARGETSO)) DO @IF     EXIST %~dpnF.lib @IF NOT EXIST %F @ECHO lib\%%~nF.lib...ok"    			lib\%%~nF.dll...ERROR!
+	@for %F in ($(TARGETSO)) DO @IF     EXIST %~dpnF.lib @IF     EXIST %F @ECHO lib\%%~nF.lib...ok"    			lib\%%~nF.dll...ok
+
+#	@for %F in ($(TARGETSO:.dll=.lib)) DO @IF EXIST %F ( @ECHO lib\%~nxF...ok ) ELSE ( @ECHO lib\%~nxF...ERROR! )
+#	@for %F in ($(TARGETSO))           DO @IF EXIST %F ( @ECHO lib\%~nxF...ok ) ELSE ( @ECHO lib\%~nxF...ERROR! )
+
+depend:
+        @makedepend -I$(INCLUDE) *.cxx >& /dev/null
+
+###
+.$(ObjSuf): .$(SrcSuf)
+
+# -p option to request the use of the compiler's preprocessor
+# instead of CINT's preprocessor.  This is useful to handle header
+# files with macro construct not handled by CINT.
+#
+$(NAME)Dict.$(SrcSuf): $(headers) $(NAME)LinkDef.h
+   @echo "Generating dictionary $@..."
+   rootcint -f $@ -c -p -I$(INC_DIR) $(headers) $(NAME)LinkDef.h 
+
+.cxx.$(ObjSuf):
+   $(CXX) $(CXXFLAGS) $(EXTRAFLAGS) $(CXXOPT) -I$(INC_DIR) -c $<
+
+.cpp.$(ObjSuf):
+   $(CXX) $(CXXFLAGS) $(EXTRAFLAGS) $(CXXOPT) -I$(INC_DIR) -c $<
+
+# /TP compile all files as C++ even if they have *.C extension
+.C.$(ObjSuf):
+   $(CXX) $(CXXFLAGS) $(EXTRAFLAGS) $(CXXOPT) -I$(INC_DIR) -TP -c $<

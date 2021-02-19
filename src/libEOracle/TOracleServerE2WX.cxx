@@ -1555,7 +1555,7 @@ void EdbScan2DB::LoadVolume( EdbScanProc &sproc, EdbID idvol, EdbID idstop)
         if (s->ID()==eIDPATH) id_stopping_plate=s->PID();
       }
       if (!id_stopping_plate) {
-        Log(1,"EdbScan2DB::LoadVolume", "ERROR: informations about the path %d not found in %s\n",eIDPATH,filename);
+        Log(1,"EdbScan2DB::LoadVolume", "ERROR: informations about the path %d not found in %s\n",eIDPATH,filename.Data());
       }
       else
       {
@@ -1629,7 +1629,7 @@ void EdbScan2DB::AddBrick( EdbScanProc &sproc )
     TString filename=Form("%s/b%06d/b%06d.geometry",sproc.eProcDirClient.Data(),eBrick,eBrick);
     FILE *fp=0;
     if ((fp=fopen( filename.Data(), "r" ))==NULL) {
-      Log(1,"AddBrick","ERROR! Cannot open file %s",filename); return;
+      Log(1,"AddBrick","ERROR! Cannot open file %s",filename.Data()); return;
     }
     while (!feof(fp))
     {

@@ -21,6 +21,7 @@ Those files can be download from the oracle site
 just unzip files and move created all files into the same subdirectory (e.g. instantclient) and then create or edit the script below
 
 ----setoracleclient.sh----
+### you need to adapt
 $FEDRA_PATH={your_fedra_dir}
 	
 ### required for occi (access from c++):

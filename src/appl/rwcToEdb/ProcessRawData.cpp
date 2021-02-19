@@ -895,7 +895,8 @@ bool ProcessRawData::dumpFragmentInEdbStructure()
 			   }
 		   }
 	   	   edbViewHeader->SetNclusters(vclusters);
-         edbView->AddSegment(edbSegment.get()) ;
+		   //edbView->AddSegment(edbSegment.get()) ;
+		   edbView->AddSegment(edbSegment) ;
            vclusters += tr_clusters;
 	   } // end of tracks (t)
 	   _run->AddView(edbView);
@@ -967,7 +968,8 @@ bool ProcessRawData::dumpFragmentInEdbStructure()
 			   }
 		   }
 	   	   edbViewHeader->SetNclusters(vclusters);
-         edbView->AddSegment(edbSegment.get()) ;
+		   //edbView->AddSegment(edbSegment.get()) ;
+		   edbView->AddSegment(edbSegment); 
            vclusters += tr_clusters;
 	   } // end of tracks (t)
 	   _run->AddView(edbView);

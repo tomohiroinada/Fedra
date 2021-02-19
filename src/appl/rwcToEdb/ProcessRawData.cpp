@@ -815,8 +815,8 @@ bool ProcessRawData::dumpFragmentInEdbStructure()
   //run->GetTree()->SetMaxTreeSize(static_cast<long long>(10e9));   
    
   EdbView*    edbView = _run->GetView();
-   //EdbSegment* edbSegment = new EdbSegment(0,0,0,0,0,0,0,0);
-   std::auto_ptr<EdbSegment> edbSegment( new EdbSegment(0,0,0,0,0,0,0,0) );
+  EdbSegment* edbSegment = new EdbSegment(0,0,0,0,0,0,0,0);
+  //std::auto_ptr<EdbSegment> edbSegment( new EdbSegment(0,0,0,0,0,0,0,0) );
     
    int v, t, p;   // v=view, s=side, t=track, p=point
    int tracks;		   // number of tracks in the fragment

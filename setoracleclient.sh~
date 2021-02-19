@@ -1,6 +1,6 @@
 #!/bin/sh
 
-$FEDRA_PATH=/Users/tomohiro/software/FASER/fedra
+$FEDRA_PATH={your_fedra_dir}
 	
 ### required for occi (access from c++):
 export OCCIHOME=$FEDRA_PATH/instantclient

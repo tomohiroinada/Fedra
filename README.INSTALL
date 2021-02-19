@@ -45,6 +45,36 @@ NOTE: After the installation, the environment variables are updated only
  update its environment variables.
 
 ---------------------------------------------------------------------
+Added in 2021 for linux
+
+1. you need to check src/doc/oracle_access.txt
+Then, it says you need to download the following files.
+
+    instantclient-basic-linux-x86-64-10.1.0.3.zip    - client itself
+    instantclient-sdk-linux-x86-64-10.1.0.3.zip      - occi inside
+    instantclient-sqlplus-linux-x86-64-10.1.0.3.zip  - useful guy
+
+Those files can be download from the oracle site
+(e.g. https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html)
+just unzip files into the same subdirectory (e.g. instantclient) and then create or edit the script below
+
+     	----setoracleclient.sh----
+	$FEDRA_PATH={your_fedra_dir}
+	
+	### required for occi (access from c++):
+	export OCCIHOME=$FEDRA_PATH/instantclient
+	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$OCCIHOME
+	export PATH=$PATH:$OCCIHOME
+
+	### required for $TNS_ADMIN/tnsnames.ora
+	export TNS_ADMIN=$FEDRA_PATH/oracle
+
+	### required for $ORACLE_HOME/sqplus/admin/glogon.sql  (optional)
+	export ORACLE_HOME=$FEDRA_PATH/oracle
+	--------------------------
+
+
+---------------------------------------------------------------------
 Windows (for developers):
 
 How to compile FEDRA from the command prompt:

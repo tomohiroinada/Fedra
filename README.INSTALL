@@ -1,30 +1,20 @@
-download fedra-vx-xx-xx.tgz  from
-http://ntslab01.na.infn.it/fedra/download/
+---------------------------------------------------------------------
+Under this environment, compliing was succeeded.
+gcc/++ version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC)
+root_v5.34.36 (with following options, cmake -D mathmore=ON -D builtin_zlib=ON -D minuit2=ON)
 
-In order to compile libEOracle please read src/doc/oracle_access.txt to 
-install Oracle OCCI package 
 
 ---------------------------------------------------------------------
-Linux: 
-
-in your fedra directory unpack fedra-vx-xx-xx.tgz as 
-[fedra]$ tar zxvf fedra-vx-xx-xx.tgz  
-
-Automatic installation procedure for linux (thanks to Markus)
-
-type in this directory
-"./install.sh" or 
-". ./install.sh" (depending on the shell)
-
----------------------------------------------------------------------
-Added in 2021 by TI for linux
+Added in 2021 by TI for Linux
 
 1. you need to check src/doc/oracle_access.txt
+(In order to compile libEOracle please read src/doc/oracle_access.txt to 
+install Oracle OCCI package )
 Then, it says you need to download the following files.
 
-    instantclient-basic-linux-x86-64-10.1.0.3.zip    - client itself
-    instantclient-sdk-linux-x86-64-10.1.0.3.zip      - occi inside
-    instantclient-sqlplus-linux-x86-64-10.1.0.3.zip  - useful guy
+    instantclient-basic-linux-x86-64-*.zip    - client itself
+    instantclient-sdk-linux-x86-64-*.zip      - occi inside
+    instantclient-sqlplus-linux-x86-64-*.zip  - useful guy
 
 Those files can be download from the oracle site
 (e.g. https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html)

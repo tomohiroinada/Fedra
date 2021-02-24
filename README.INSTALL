@@ -36,7 +36,17 @@ export TNS_ADMIN=$FEDRA_PATH/oracle
 export ORACLE_HOME=$FEDRA_PATH/oracle
 --------------------------
 
+Then, you need to specify your Fedra path again in setup_new.sh.
+
+----setup_new.sh----
+export FEDRA_ROOT={your_path}/virtualrec_test/Fedra
+export LD_LIBRARY_PATH=$FEDRA_ROOT/lib:${LD_LIBRARY_PATH}
+export PATH=${PATH}:$FEDRA_ROOT/bin
+export PYTHONPATH=${PYTHONPATH}:$FEDRA_ROOT/python
+--------------------------
+
 source ./setoracleclient.sh 
+source ./setup_new.sh
 chmod u+x install.sh
 ./install.sh
 

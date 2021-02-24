@@ -36,7 +36,7 @@ export TNS_ADMIN=$FEDRA_PATH/oracle
 export ORACLE_HOME=$FEDRA_PATH/oracle
 --------------------------
 
-source setoracleclient.sh 
+source ./setoracleclient.sh 
 chmod u+x install.sh
 ./install.sh
 
